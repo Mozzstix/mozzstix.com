@@ -1,0 +1,11 @@
+templatePath: src/templates
+staticPath: static
+buildPath: build
+
+context:
+  assets: ../../static/assets/manifest.json
+
+routes:
+  home:
+    path: /
+    template: index.html
