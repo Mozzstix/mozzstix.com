@@ -1,12 +1,6 @@
-<html>
-<head>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="/assets/{{ global.assets['stylesheets/main.css'] }}">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script src="/assets/{{ global.assets['javascripts/main.js'] }}"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 <div id="home">
 	<div id="intro" class="panel">
 		<div class="content-block">
@@ -142,6 +136,4 @@
 			</div>
 		</div>
 	</div>
-
-</body>
-</html>
+{% endblock %}
