@@ -8,4 +8,14 @@ context:
 routes:
   home:
     path: /
-    template: index.html
+    context: data/reviews.graphql
+    template: pages/home.html
+
+  review:
+    path: /review/:name
+    template: pages/review.html
+    context: data/reviews.graphql
+    paginate:
+      property: reviews
+      itemName: review
+
