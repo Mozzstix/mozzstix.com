@@ -216,24 +216,7 @@ body {
   margin-bottom: 30px;
   font-weight: 400;
 }
-ol {
-  margin: 0;
-  list-style: none;
-}
-li {
-  counter-increment: i;
-}
-li:before {
-  margin-right: 10px;
-  content: counter(i) ".";
-  font-weight: 800;
-}
-li {
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 26px;
-  color: #fff;
-}
+
 .info-graphic-rating {
   max-width: 300px;
   width: 100%;
