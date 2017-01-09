@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% from "macros/image-url.html" import imageUrl %}
-
+{% block title %}Mozzstix - {{ review.name }}{% endblock %}
 {% block meta %}
   <meta property="fb:app_id"       content="371959079641288" />
   <meta property="og:url"          content="{{ global.site.baseUrl }}{{ currentPath }}" />
