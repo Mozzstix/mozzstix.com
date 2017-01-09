@@ -247,6 +247,20 @@
   max-width: 300px;
   width: 100%;
 }
+
+.info-graphic-legend {
+  list-style: decimal;
+  width: 300px;
+  margin: 20px auto 0;
+  line-height: 20px;
+  height: 40px;
+
+  li {
+    float: left;
+    margin-right: 25px;
+  }
+}
+
 @media(min-width: 1024px) {
   .info-graphic-rating {
     max-width: 450px;
