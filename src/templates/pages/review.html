@@ -1,8 +1,89 @@
 {% extends "base.html" %}
 
-{% block content %}
-  <div id="review">
-    HI {{ review.name }}
+{% from "macros/image-url.html" import imageUrl %}
 
+{% block content %}
+  <div id="review" class="{{ review.theme }}">
+    <div class="hero-image-container">
+      <div class="hero-image" style="background-image: url('{{ imageUrl(review.heroImage.s3Key) }}');"></div>
+    </div>
+    <div class="review">
+      <div class="review-header">
+        <div class="name-of-dish">{{ review.nameOfDish }}</div>
+        <div class="name">{{ review.name }}</div>
+        <div class="address">{{ review.address }}<br>{{ review.city }}, {{ review.state }}, {{ review.zipCode }}</div>
+        <div class="rating-wrapper">
+          <div class="rating-{{ review.rating }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        </div>
+      </div>
+      <div class="review-content">{{ review.reviewHtml | safe }}</div>
+      {#<div class="price"><b>Price:</b> {{ review.price }}</div>#}
+      {#<div class="price-per-stick"><b>Price per stick:</b> {{ review.pricePerStick }}</div>#}
+      <table>
+        <tr>
+          <td class="key">Price</td>
+          <td class="value">{{ review.priceDescription }}</td>
+        </tr>
+        <tr>
+          <td class="key">Crispiness</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.crispiness }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Breading</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.breading }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Cheese</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.cheese }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Gooeyness</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.stretch }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Dip</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.dip }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Presentation</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.presentation }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr class="overall-rating">
+          <td class="key">Overall</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.rating }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="social-container">
+    <div class="share-label">Share this</div>
   </div>
 {% endblock %}

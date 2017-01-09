@@ -1,0 +1,168 @@
+@font-face {
+  font-family: LEngineer;
+  src: url(/assets/fonts/LEngineer-Regular.otf);
+  font-weight: normal;
+}
+
+#review {
+  position: relative;
+  top: 80px;
+  color: #000;
+  margin-bottom: 250px;
+  font-size: 18px;
+  line-height: 2em;
+}
+.hero-image-container {
+  height: 220px;
+  width: 100%;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  background-size:cover;
+  background-position: center;
+}
+.review-header {
+  text-align: center;
+  padding: 40px 40px 20px 40px;
+  .rating {
+    font-size: 48px;
+    line-height: 1.5em;
+  }
+}
+.name-of-dish {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+.name {
+  line-height: 1.5em;
+  font-weight: 800;
+}
+.address {
+  line-height: 1.5em;
+  margin-bottom: 15px;
+}
+.review {
+  margin: 0 auto;
+  max-width: 740px;
+  p {
+    padding: 0 40px;
+    margin-bottom: 30px;
+    font-weight: 200;
+    letter-spacing: .6px;
+  }
+  img {
+    width: 100%;
+  }
+  blockquote {
+    font-family: LEngineer;
+    font-size: 48px;
+    line-height: 54px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+
+  }
+  strong {
+    font-weight: 700;
+  }
+}
+.review-content {
+  margin-bottom: 25px;
+}
+.price, .price-per-stick {
+  margin-bottom: 25px;
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr {
+  .rating-wrapper {
+    display: table-cell;
+    float: right;
+  }
+  .rating {
+    font-size: 28px;
+  }
+}
+td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.key {
+  font-weight: 600;
+  padding-left: 40px;
+}
+.value {
+  text-align: right;
+  padding-right: 40px;
+}
+.overall-rating {
+  background-color: #f8f8f8;
+}
+.social-container {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff9df;
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, .2);
+  z-index: 1;
+}
+.share-label {
+  text-transform: uppercase;
+  color: #342d29;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 20px 0 0 40px;
+}
+
+
+
+@media(min-width: 568px) {
+  .hero-image-container {
+    height: 400px;
+  }
+  .review {
+    padding: 0 40px;
+    p {
+      padding: 0;
+      //Need to do more work here
+    }
+  }
+  #review {
+    font-size: 21px;
+    tr {
+      border-bottom: 2px solid #eeeeee;
+    }
+    table {
+      padding: 40px 0 40px 0;
+      tr:nth-child(7) {
+        border: initial;
+      }
+      tr:nth-child(8) {
+        border: initial;
+      }
+    }
+  }
+  .review-header {
+    .rating {
+      font-size: 64px;
+    }
+  }
+  .name-of-dish {
+    font-size: 42px;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-image-container {
+    height: 500px;
+  }
+  .name-of-dish {
+margin-top: 25px;
+  }
+}

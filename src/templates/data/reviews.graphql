@@ -16,8 +16,18 @@
     state
     rating
     city
+    breading
+    dip
+    stretch
+    cheese
+    crispiness
+    presentation
     promoQuotation
+    priceDescription
     promoImage {
+      s3Key
+    }
+    heroImage {
       s3Key
     }
     descriptionOfDish

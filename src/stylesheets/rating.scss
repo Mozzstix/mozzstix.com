@@ -1,12 +1,15 @@
 /* Rating ----------------------------------*/
 
 .rating {
+  letter-spacing: 2px;
   &:after {
     left: 0;
     content: "\2605\2605\2605\2605\2605";
     position: absolute;
     overflow: hidden;
+    letter-spacing: 2px;
   }
+  color: rgba(0,0,0,.2)
 }
 .rating-wrapper {
   position: relative;
@@ -15,22 +18,22 @@
    text-align: center;
 }
 
-@mixin rating-generator ($width, $star-color) {
+@mixin rating-generator ($width) {
   @extend .rating;
   &:after {
     width: $width;
-    color: $star-color;
+    color: #ffc600;
   }
 }
-.rating-1 {@include rating-generator(20%, #ffcc00);}
-.rating-2 {@include rating-generator(40%, #ffcc00);}
-.rating-3 {@include rating-generator(60%, #ffcc00);}
-.rating-4 {@include rating-generator(80%, #ffcc00);}
-.rating-5 {@include rating-generator(100%, #ffcc00);}
-.rating-1-5 {@include rating-generator(30%, #ffcc00);}
-.rating-2-5 {@include rating-generator(50%, #ffcc00);}
-.rating-3-5 {@include rating-generator(70%, #ffcc00);}
-.rating-4-5 {@include rating-generator(90%, #ffcc00);}
+.rating-1 {@include rating-generator(20%);}
+.rating-2 {@include rating-generator(40%);}
+.rating-3 {@include rating-generator(60%);}
+.rating-4 {@include rating-generator(80%);}
+.rating-5 {@include rating-generator(100%);}
+.rating-1-5 {@include rating-generator(30%);}
+.rating-2-5 {@include rating-generator(50%);}
+.rating-3-5 {@include rating-generator(70%);}
+.rating-4-5 {@include rating-generator(90%);}
 
 .promo-rating {
   font-size: 28px;

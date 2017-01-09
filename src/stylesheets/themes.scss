@@ -1,0 +1,32 @@
+@mixin theme-generator ($color-primary, $color-secondary) {
+  .button {
+    background-color: $color-primary;
+    &:before{
+      border-left-color: $color-secondary;
+    }
+    &:after{
+      border-top-color: $color-secondary;
+    }
+  }
+  .promo-text-block {
+    background-color: $color-primary;
+  }
+  .review {
+    blockquote {
+      color: $color-primary;
+    }
+  }
+  //.overall-rating {
+  //  background-color: $color-secondary;
+  //}
+  //.rating {
+  //  &:after{
+  //    color: $color-primary;
+  //  }
+  //}
+
+}
+.velveta {@include theme-generator(#ffc600, #946500);}
+.cheddar {@include theme-generator(#ff9600, #a35400);}
+.gouda {@include theme-generator(#EC5002, #ab3900);}
+.marinara {@include theme-generator(#d10000, #770000);}
