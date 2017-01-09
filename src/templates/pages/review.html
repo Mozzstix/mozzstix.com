@@ -6,8 +6,8 @@
   <meta property="fb:app_id"       content="371959079641288" />
   <meta property="og:url"          content="{{ global.site.baseUrl }}{{ currentPath }}" />
   <meta property="og:type"         content="article" />
-  <meta property="og:title"        content="{{ review.nameOfDish }}" />
-  <meta property="og:description"  content="{{ review.promoQuotation }}" />
+  <meta property="og:title"        content="{{ review.nameOfDish }} from {{ review.name }}" />
+  <meta property="og:description"  content="{{ review.descriptionOfDish }}" />
   <meta property="og:image"        content="{{ imageUrl(review.heroImage.s3Key) }}" />
 {% endblock %}
 
