@@ -65,16 +65,17 @@
 
 // Panel 1
 .melty {
-  position: relative;
+  display: inline-block;
+  line-height: 1;
   font-size: 87px;
-  z-index: -z(content);
-  margin-bottom: 30px;
+  position: relative;
 
+  z-index: -z(content);
   &:before {
     content: "melty";
     position: absolute;
     top: 4px;
-    left: 6px;
+    left: 4px;
     color: #f3bd00;
     transform: rotate(1.5deg);
     z-index: -1; // relative to parent
@@ -84,23 +85,23 @@
     font-size: 200px;
 
     &:before {
-      top: 10px;
-      left: 14px;
+      top: 8px;
+      left: 9px;
     }
   }
+
 }
 
 .goodness {
   @extend .melty;
   font-size: 52px;
-  margin-bottom: 0;
 
   &:before {
     content: "goodness";
   }
 
   @media(min-width: 1024px) {
-      font-size: 117px;
+    font-size: 117px;
   }
 }
 
@@ -197,10 +198,26 @@
 }
 
 
-// .asterisk span {
-// 	vertical-align:super;
-// 	font-size: 28;
-// }
+.asterisk {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    line-height: 1;
+    position: absolute;
+    display: inline-block;
+    content: '*';
+    font-size: 25px;
+    top: 7px;
+    right: -17px;
+
+    @media(min-width: 1024px) {
+      font-size: 50px;
+      top: 20px;
+      right: -30px;
+    }
+  }
+}
 
 
 
