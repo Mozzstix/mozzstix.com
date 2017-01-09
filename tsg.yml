@@ -4,6 +4,8 @@ buildPath: build
 
 context:
   assets: ../../static/assets/manifest.json
+  site:
+    baseUrl: http://dev.mozzstix.com
 
 routes:
   home:

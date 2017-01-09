@@ -2,6 +2,15 @@
 
 {% from "macros/image-url.html" import imageUrl %}
 
+{% block meta %}
+  <meta property="fb:app_id"       content="371959079641288" />
+  <meta property="og:url"          content="{{ global.site.baseUrl }}{{ currentPath }}" />
+  <meta property="og:type"         content="article" />
+  <meta property="og:title"        content="{{ review.nameOfDish }}" />
+  <meta property="og:description"  content="{{ review.promoQuotation }}" />
+  <meta property="og:image"        content="{{ imageUrl(review.heroImage.s3Key) }}" />
+{% endblock %}
+
 {% block content %}
   <div id="review" class="{{ review.theme }}">
     <div class="hero-image-container">
@@ -85,5 +94,21 @@
   </div>
   <div class="social-container">
     <div class="share-label">Share this</div>
+    <button class="facebook-share" onclick="facebookShare();">
+      <img class="facebook-share-logo" src="/assets/images/icon-facebook-share.svg">
+    </button>
+    {#<button class="email-share" onclick="facebookShare();">#}
+      {#<img class="email-share-logo" src="/assets/images/icon-email-share.svg">#}
+    {#</button>#}
   </div>
+
+  <script>
+    function facebookShare() {
+      FB.ui({
+        method: 'share',
+        href: '{{ global.site.baseUrl }}{{ currentPath }}',
+      }, function(response){});
+    }
+  </script>
 {% endblock %}
+

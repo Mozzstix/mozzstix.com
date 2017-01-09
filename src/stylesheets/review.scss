@@ -119,6 +119,27 @@ td {
   letter-spacing: 1px;
   margin: 20px 0 0 40px;
 }
+button {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  padding: 0;
+}
+.facebook-share {
+  position: absolute;
+  right:40px;
+  top: 9px;
+}
+.email-share {
+  position: absolute;
+  right:100px;
+  top: 9px;
+}
+.facebook-share-logo, .email-share-logo {
+  width: 40px;
+  height: 40px;
+}
 
 
 
@@ -163,6 +184,24 @@ td {
     height: 500px;
   }
   .name-of-dish {
-margin-top: 25px;
+    margin-top: 25px;
   }
+  //.social-container {
+  //  height: 100%;
+  //  width: 100px;
+  //  position: fixed;
+  //  bottom: initial;
+  //  top: 0;
+  //  background-color: initial;
+  //  box-shadow: none;
+  //}
+  //.share-label {
+  //  margin: 260px 0 0 40px;
+  //}
+  //.facebook-share {
+  //  position: absolute;
+  //  right:initial;
+  //  left: 40px;
+  //  top: 320px;
+  //}
 }
