@@ -21,13 +21,13 @@ $(document).ready(function() {
         $('#logo').removeAttr('style');
         $('.logo-stick').removeAttr('style');
         $('.logo-sans-stick').removeAttr('style');
-        $('#dotted-line').css('visibility', 'hidden');
+        $('.dotted-line-hack').css('visibility', 'hidden');
         $('#home').css('padding-top', panelH + 'px');
       }
     } else {
       if ($('#logo').hasClass('lock-nav')) {
         $('.logo-sans-stick').css('visibility', 'visible');
-        $('#dotted-line').css('visibility', 'visible');
+        $('.dotted-line-hack').css('visibility', 'visible');
         $('#logo').removeClass('lock-nav');
         $('#home').removeAttr('style');
       }
