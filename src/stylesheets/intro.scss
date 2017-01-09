@@ -2,7 +2,9 @@
   width: 100%;
   position: relative;
   background-color: #ffc600;
+  backface-visibility: hidden;
 }
+
 .dotted-line {
   height: 86px;
   width: 0;
