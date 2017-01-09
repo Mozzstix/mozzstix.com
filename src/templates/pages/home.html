@@ -1,66 +1,63 @@
 {% extends "../base.html" %}
 {% block nav %}{% endblock %}
 {% block content %}
-<div id="home" class="home">
-	<div id="intro" class="panel">
-		<div class="content-block">
-			<div class="content-container">
-				<div class="content">
-					<div class="subhead"> Welcome to the world of </div>
-					<div><span class="headline melty">Melty</span></div>
-                    <div><span class="headline goodness">Goodness</span></div>
-					<div class="dotted-line"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="logo" class="panel nav-panel">
-		<img class="logo-sans-stick" src="/assets/images/logo-sans-stick.svg">
-		<img class="logo-stick" src="/assets/images/logo-stick.svg">
-	</div>
-	<div class="panel">
-		<div class="content-block">
-			<div class="content-container">
-				<div class="content">
-					<div class="headline reviews-of">Reviews of</div>
-					<div class="headline mozzarella">Mozzarella</div>
-					<div class="headline sticks"><span class="asterisk">Sticks</span></div>
-					<div class="subhead disclaimer">*And anything else in the breaded cheese family</div>
-					<div class="dotted-line"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="panel">
-		<div class="content-block">
-			<div class="content-container">
-				<div class="content">
-					<div class="subhead">We've got it down to a science</div>
-							<div class="list-label"> Fig. 01: The six rating dimensions of Mozzstix</div>
-							<img class="info-graphic-rating" viewBox="0 0 468 492" preserveAspectRatio="xMaxYMax" src="/assets/images/info-graphic-rating.svg">
-              <p><b>1.</b> Cheese <b>2.</b> Stretch <b>3.</b> Breading</p>
-              <p><b>4.</b> Crispiness <b>5.</b> Dip <b>6.</b> Presentation</p>
-						<div class="dotted-line"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="panel">
-		<div class="content-block">
-			<div class="content-container">
-				<div class="content">
-					<div class="headline enjoy">Enjoy</div>
-					<img class="emoji" src="/assets/images/emoji.svg"></img>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- promos -->
-  {%  for promo in reviews %}
-    {% include "../partials/home-review.html" %}
-
-  {% endfor %}
+    <div id="home" class="home">
+        <div id="intro" class="panel">
+            <div class="content-block">
+                <div class="content-container">
+                    <div class="content">
+                        <div class="subhead"> Welcome to the world of </div>
+                        <div><span class="headline melty">Melty</span></div>
+                        <div><span class="headline goodness">Goodness</span></div>
+                        <div class="dotted-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="logo" class="panel nav-panel">
+            <img class="logo-sans-stick" src="/assets/images/logo-sans-stick.svg">
+            <img class="logo-stick" src="/assets/images/logo-stick.svg">
+        </div>
+        <div class="panel">
+            <div class="content-block">
+                <div class="content-container">
+                    <div class="content">
+                        <div class="headline reviews-of">Reviews of</div>
+                        <div class="headline mozzarella">Mozzarella</div>
+                        <div class="headline sticks"><span class="asterisk">Sticks</span></div>
+                        <div class="subhead disclaimer">*And anything else in the breaded cheese family</div>
+                        <div class="dotted-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="content-block">
+                <div class="content-container">
+                    <div class="content">
+                        <div class="subhead">We've got it down to a science</div>
+                        <div class="list-label"> Fig. 01: The six rating dimensions of Mozzstix</div>
+                        <img class="info-graphic-rating" viewBox="0 0 468 492" preserveAspectRatio="xMaxYMax" src="/assets/images/info-graphic-rating.svg">
+                        <p><b>1.</b> Cheese <b>2.</b> Stretch <b>3.</b> Breading</p>
+                        <p><b>4.</b> Crispiness <b>5.</b> Dip <b>6.</b> Presentation</p>
+                        <div class="dotted-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="content-block">
+                <div class="content-container">
+                    <div class="content">
+                        <div class="headline enjoy">Enjoy</div>
+                        <img class="emoji" src="/assets/images/emoji.svg"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- promos -->
+        {%  for promo in reviews %}
+            {% include "../partials/home-review.html" %}
+        {% endfor %}
+    </div>
 {% endblock %}
