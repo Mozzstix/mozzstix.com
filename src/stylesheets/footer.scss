@@ -13,9 +13,11 @@
 }
 .legal-line {
   position: absolute;
-  color: #000;
+  color: #d9a800;
   bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
 }

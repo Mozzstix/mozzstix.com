@@ -16,7 +16,7 @@ a {
 
 /* Home promo ----------------------------------*/
 .promo-container {
-  padding: 20px 20px 0 20px;
+  padding: 10px 10px 0 10px;
   //max-width: 960px;
   margin: 0 auto;
 }
@@ -48,14 +48,15 @@ a {
 	z-index: 3;
 }
 .promo-subhead {
-	font-size: 16px;
+	font-size: 14px;
 	margin-bottom: 10px;
 	letter-spacing: 1px;
 	font-weight: 400;
+  line-height: 1.2em;
 }
 .promo-headline {
-	font-size: 32px;
-	line-height: 36px;
+	font-size: 24px;
+	line-height: 1.1em;
 	margin-bottom: 5px;
 	letter-spacing: -.5px;
 	font-weight: 800;
@@ -66,7 +67,7 @@ a {
 	font-weight: 800;
 }
 .promo-image-container {
-	height: 300px;
+	height: 260px;
 	background-size: cover;
 	background-position: center;
 	margin: 0 auto;
@@ -132,7 +133,7 @@ a {
   border-top-width: 0;
 }
 .button-label {
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 800;
 	letter-spacing: .5px;
 	text-transform: uppercase;
@@ -141,7 +142,28 @@ a {
 .button-container {
 	position: absolute;
 	left: 50%; transform: translate(-50%, 0%);
-	bottom: 50px;
+	bottom: 40px;
+}
+
+@media(min-width: 375px) {
+  .promo-container {
+    padding: 20px 20px 0 20px;
+  }
+  .promo-subhead {
+    font-size: 16px;
+  }
+  .promo-headline {
+    font-size: 32px;
+  }
+  .button-label {
+    font-size: 20px;
+  }
+  .promo-image-container {
+    height: 300px;
+  }
+  .button-container {
+    bottom: 50px;
+  }
 }
 
 @media(min-width: 568px) {

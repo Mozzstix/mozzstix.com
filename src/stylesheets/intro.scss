@@ -69,7 +69,7 @@
 .melty {
   display: inline-block;
   line-height: 1;
-  font-size: 87px;
+  font-size: 72px;
   position: relative;
 
   z-index: -z(content);
@@ -77,12 +77,27 @@
     content: "melty";
     position: absolute;
     top: 4px;
-    left: 4px;
+    left: 3px;
     color: #f3bd00;
     transform: rotate(1.5deg);
     z-index: -1; // relative to parent
   }
+  @media(min-width: 375px) {
+    font-size: 87px;
 
+    &:before {
+      top: 4px;
+      left: 4px;
+    }
+  }
+  @media(min-width: 568px) {
+    font-size: 145px;
+
+    &:before {
+      top: 7px;
+      left: 4px;
+    }
+  }
   @media(min-width: 1024px) {
     font-size: 200px;
 
@@ -91,17 +106,21 @@
       left: 9px;
     }
   }
-
 }
 
 .goodness {
   @extend .melty;
-  font-size: 52px;
+  font-size: 43px;
 
   &:before {
     content: "goodness";
   }
-
+  @media(min-width: 375px) {
+    font-size: 52px;
+  }
+  @media(min-width: 568px) {
+    font-size: 85px;
+  }
   @media(min-width: 1024px) {
     font-size: 117px;
   }
@@ -170,19 +189,46 @@
 
 // Panel 3
 .reviews-of {
-  font-size: 48px
+  font-size: 39px
 }
 .mozzarella {
-  font-size: 43px
+  font-size: 34px
 }
 .sticks {
-  font-size: 87px
+  font-size: 70px
 }
 .disclaimer {
   text-transform: initial;
   margin-top: 30px;
-  font-size: 18px;
-  //color: #ed4f00;
+  font-size: 16px;
+}
+@media(min-width: 375px) {
+  .reviews-of {
+    font-size: 48px
+  }
+  .mozzarella {
+    font-size: 43px
+  }
+  .sticks {
+    font-size: 87px
+  }
+  .disclaimer {
+    font-size: 18px;
+  }
+}
+@media(min-width: 568px) {
+  .reviews-of {
+    font-size: 80px
+  }
+  .mozzarella {
+    font-size: 70px
+  }
+  .sticks {
+    font-size: 139px
+  }
+  .disclaimer {
+    font-size: 22px;
+  }
 }
 @media(min-width: 1024px) {
   .reviews-of {
@@ -224,17 +270,7 @@
 
 
 // Panel 4
-//.column-left, .column-right {
-//	margin-top: 40px;
-//	min-width: 295px;
-//	max-width: 400px;
-//	text-align: left;
-//	display: inline-block;
-//	vertical-align: middle;
-//}
-//.column-left {
-// padding-right: 40px;
-//}
+
 .list-label {
   font-size: 22px;
   font-style: italic;
@@ -280,6 +316,15 @@
 }
 .emoji {
   height: 50px;
+}
+@media(min-width: 568px) {
+  .enjoy {
+    font-size: 100px;
+    margin-right: 20px;
+  }
+  .emoji {
+    height: 100px;
+  }
 }
 @media(min-width: 1024px) {
   .enjoy {
