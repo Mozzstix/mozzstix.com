@@ -6305,9 +6305,9 @@ table@^4.0.1:
     slice-ansi "0.0.4"
     string-width "^2.0.0"
 
-takeshape-cli@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/takeshape-cli/-/takeshape-cli-1.3.2.tgz#0683f859db15836876a7c5560f70ae0dd9064a43"
+takeshape-cli@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/takeshape-cli/-/takeshape-cli-1.4.0.tgz#8175c32730eef3794add2b652696ec91b3a61347"
   dependencies:
     archiver "^1.3.0"
     bluebird "^3.4.6"
@@ -6324,11 +6324,11 @@ takeshape-cli@^1.3.2:
     node-fetch "^1.6.3"
     request "^2.79.0"
     stream-to-promise "^2.2.0"
-    takeshape-ssg "^0.9.0"
+    takeshape-ssg "^0.10.0"
 
-takeshape-ssg@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/takeshape-ssg/-/takeshape-ssg-0.9.0.tgz#2274a2728474bd70af9385289a11292af30b7576"
+takeshape-ssg@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/takeshape-ssg/-/takeshape-ssg-0.10.0.tgz#6de111cda59cb2176b614b5e76524ca3cd8bd5ab"
   dependencies:
     bluebird "^3.4.6"
     commonmark "^0.27.0"
