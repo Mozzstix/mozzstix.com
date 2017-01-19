@@ -2,15 +2,45 @@
 
 {% block title %}Mozzstix - {{ review.name }}{% endblock %}
 {% block meta %}
-  <meta property="fb:app_id"       content="371959079641288" />
-  <meta property="og:url"          content="{{ global.site.baseUrl }}{{ currentPath }}" />
-  <meta property="og:type"         content="article" />
-  <meta property="og:title"        content="{{ review.nameOfDish }} from {{ review.name }}" />
-  <meta property="og:description"  content="{{ review.descriptionOfDish }}" />
-  <meta property="og:image"        content="{{ review.heroImage.s3Key | image }}" />
+  <meta name="description" content="{{ review.descriptionOfDish }}"/>
+
+  <meta property="fb:app_id" content="371959079641288"/>
+  <meta property="og:description" content="{{ review.descriptionOfDish }}"/>
+  <meta property="og:image" content="{{ review.heroImage.s3Key | image }}"/>
+  <meta property="og:image:height" content="1152"/>
+  <meta property="og:image:width" content="2048"/>
+  <meta property="og:site_name" content="Mozzstix">
+  <meta property="og:title" content="{{ review.nameOfDish }} from {{ review.name }}"/>
+  <meta property="og:url" content="{{ global.site.baseUrl }}{{ currentPath }}"/>
+  <meta property="og:type" content="review"/>
 {% endblock %}
 
 {% block content %}
+
+  <div class="hidden">
+    <div itemscope itemtype="http://schema.org/LocalBusiness">
+      <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+        <meta itemprop="ratingValue" content="{{ review.rating | replace("-", ".") }}">
+      </div>
+      <meta itemprop="image" content="{{ review.heroImage.s3Key | image }}">
+      <meta itemprop="name" content="{{ review.name }}"/>
+      <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">{{ review.address }}</span><br>
+        <span itemprop="addressLocality">{{ review.city }}</span>, <span itemprop="addressRegion">{{ review.state }}</span> <span
+          itemprop="postalCode">{{ review.zipCode }}</span><br>
+        <meta content="US" itemprop="addressCountry">
+      </address>
+      <div itemprop="review" itemscope itemtype="http://schema.org/Review">
+        <meta itemprop="author" content="Mozzstix">
+        <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+          <meta itemprop="ratingValue" content="{{ review.rating | replace("-", ".") }}">
+        </div>
+        <meta itemprop="datePublished" content="{{ review._updatedAt }}">
+        <div itemprop="description">{{ review.reviewHtml | safe }}</div>
+      </div>
+    </div>
+  </div>
+
   <div id="review" class="{{ review.theme }}">
     <div class="hero-image-container">
       <div class="hero-image" style="background-image: url('{{ review.heroImage.s3Key | image }}');"></div>
@@ -25,8 +55,6 @@
         </div>
       </div>
       <div class="review-content">{{ review.reviewHtml | safe }}</div>
-      {#<div class="price"><b>Price:</b> {{ review.price }}</div>#}
-      {#<div class="price-per-stick"><b>Price per stick:</b> {{ review.pricePerStick }}</div>#}
       <table>
         <tr>
           <td class="key">Price</td>
@@ -97,7 +125,7 @@
       <img class="facebook-share-logo" src="/assets/images/icon-facebook-share.svg">
     </button>
     {#<button class="email-share" onclick="facebookShare();">#}
-      {#<img class="email-share-logo" src="/assets/images/icon-email-share.svg">#}
+    {#<img class="email-share-logo" src="/assets/images/icon-email-share.svg">#}
     {#</button>#}
   </div>
 
@@ -106,7 +134,8 @@
       FB.ui({
         method: 'share',
         href: '{{ global.site.baseUrl }}{{ currentPath }}',
-      }, function(response){});
+      }, function (response) {
+      });
     }
   </script>
 {% endblock %}
