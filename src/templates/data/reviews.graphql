@@ -30,7 +30,11 @@
     heroImage {
       s3Key
     }
-    descriptionOfDish
+    reviewHighlight
+    telephone
+    cuisine
+    priceRange
+    website
     reviewHtml
     pricePerStick
     searchSummary
