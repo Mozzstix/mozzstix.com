@@ -9,11 +9,11 @@
   width: 100%;
   height: 80px;
 }
-#review {
+.review-container {
   position: relative;
   top: 80px;
   color: #000;
-  margin-bottom: 250px;
+  //margin-bottom: 250px;
   font-size: 16px;
   line-height: 2em;
 }
@@ -85,6 +85,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 50px;
 }
 tr {
   .rating-wrapper {
@@ -134,6 +135,17 @@ button {
   background-color: transparent;
   padding: 0;
 }
+.review-footer {
+  padding: 0 20px 100px 20px;
+  height: 36px;
+}
+.next-link, .previous-link {
+  display: inline-block;
+  color: #000;
+}
+.next-link {
+  float: right;
+}
 .facebook-share {
   position: absolute;
   right:40px;
@@ -150,7 +162,7 @@ button {
 }
 
 @media(min-width: 375px) {
-  #review {
+  .review-container {
     font-size: 18px;
   }
   .hero-image-container {
@@ -174,6 +186,9 @@ button {
       font-family: LEngineer;
       font-size: 48px;
 
+    }
+    .review-footer {
+      padding: 0 40px 100px 40px;
     }
   }
   tr {
@@ -202,10 +217,12 @@ button {
     padding: 0 40px;
     p {
       padding: 0;
-      //Need to do more work here
     }
   }
-  #review {
+  .review-footer {
+    padding: 0 0 100px 0;
+  }
+  .review-container {
     font-size: 21px;
     tr {
       border-bottom: 2px solid #eeeeee;

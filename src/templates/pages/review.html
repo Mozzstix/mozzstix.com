@@ -68,7 +68,7 @@
 {% endblock %}
 
 {% block content %}
-  <div id="review" class="{{ review.theme }}">
+  <div class="review-container {{ review.theme }}">
     <div class="hero-image-container">
       <div class="hero-image" style="background-image: url('{{ review.heroImage.s3Key | image }}');"></div>
     </div>
@@ -144,8 +144,18 @@
           </td>
         </tr>
       </table>
+      <div class="review-footer">
+        {% if previousPath %}
+        <a href="{{ previousPath }}"><strong class="previous-link">Previous Review</strong></a>
+        {% endif %}
+        {% if nextPath %}
+        <a href="{{ nextPath }}"><strong class="next-link">Next Review</strong></a>
+        {% endif %}
+      </div>
     </div>
   </div>
+
+
   <div class="social-container">
     <div class="share-label">Share this</div>
     <button class="facebook-share" onclick="facebookShare();">
