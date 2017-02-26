@@ -4,14 +4,18 @@ buildPath: build
 
 context:
   assets: ../../static/assets/manifest.json
-  site:
-    baseUrl: http://www.mozzstix.com
+  site: data/site.json
 
 routes:
   home:
     path: /
     context: data/reviews.graphql
     template: pages/home.html
+
+  rss:
+    path: /feed/rss.xml
+    template: feed/rss.xml
+    context: data/reviews.graphql
 
   review:
     path: /review/:name

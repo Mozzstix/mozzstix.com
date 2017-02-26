@@ -8,9 +8,9 @@
   <meta name="keywords" content="mozzarella sticks,New York,review,restaurant,bar,diner,local,business,share,mozzstix">
   <meta name="application-name" content="Mozzstix">
   {% block meta %}
-    <meta name="description"
-          content="Welcome to the world of melty goodness. Mozzstix features reviews of mozzarella sticks and anything else in the breaded cheese family. We've got rating sticks down to a science. So work up an appetite and enjoy!"/>
+    <meta name="description" content="{{ site.description }}"/>
   {% endblock %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href={{ site.baseUrl }}/feed/rss.xml">
   <link
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
     rel='stylesheet' type='text/css'>
@@ -43,7 +43,7 @@
         "@context":"http://schema.org",
         "@type":"Organization",
         "name":"Mozzstix",
-        "url":"http://www.mozzstix.com",
+        "url":"{{ site.baseUrl }}",
         "sameAs": ["http://www.instagram.com/mozzstix", "http://www.mozzsticks.com"]
        }
     </script>

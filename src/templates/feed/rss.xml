@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="{{ site.baseUrl }}/feed/rss.xml" rel="self" type="application/rss+xml" />
+    <title>{{ site.title }}</title>
+    <link>{{ site.baseUrl }}</link>
+    <description>{{ site.description }}</description>
+    {%  for review in reviews %}
+      {% set url %}
+        {{ site.baseUrl }}{{ review | route('review') }}
+      {% endset %}
+    <item>
+      <guid>{{ url }}</guid>
+      <title>{{ review.nameOfDish }} from {{ review.name }}</title>
+      <link>{{ url }}</link>
+      <description>{{ review.reviewHighlight }} - {{ review.rating | replace("-", ".") }} stars</description>
+      <category>Review</category>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
