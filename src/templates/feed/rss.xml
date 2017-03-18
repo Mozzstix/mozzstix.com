@@ -11,6 +11,7 @@
       {% endset %}
     <item>
       <guid>{{ url }}</guid>
+      <pubDate>{{ review._enabledAt | date('ddd, DD MMM YYYY HH:mm:ss ZZ') }}</pubDate>
       <title>{{ review.nameOfDish }} from {{ review.name }}</title>
       <link>{{ url }}</link>
       <description>{{ review.reviewHighlight }} - {{ review.rating | replace("-", ".") }} stars</description>
