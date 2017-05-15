@@ -25,3 +25,11 @@ routes:
       property: reviews
       itemName: review
 
+  recipe:
+    path: /recipe/:name
+    template: pages/recipe.html
+    context: data/recipes.graphql
+    paginate:
+      property: recipes
+      itemName: recipe
+

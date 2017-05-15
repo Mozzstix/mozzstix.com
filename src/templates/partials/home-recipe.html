@@ -1,0 +1,26 @@
+<div class="promo-container">
+  <div class="promo {{ promo.theme }}">
+    <div class="promo-label">Review</div>
+    <div class="promo-text-block">
+      <div class="promo-text-container">
+        <div class="promo-text">
+          <div class="promo-subhead">{{ promo.nameOfDish }}</div>
+          <div class="promo-headline">{{ promo.name }}</div>
+          <div class="rating-wrapper">
+            <div class="promo-rating rating-{{ promo.rating}}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="promo-image-container" style="background-image: url('{{ promo.promoImage.s3Key | image }}');">
+      <div class="image-gradient"></div>
+      <div class="button-container">
+        <a href="{{ promo | route('review') }}">
+          <div class="button">
+            <div class="button-label">{{ promo.promoCta }}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

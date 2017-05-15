@@ -22,7 +22,6 @@
     cheese
     crispiness
     presentation
-    promoQuotation
     priceDescription
     promoImage {
       s3Key

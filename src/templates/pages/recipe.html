@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Mozzstix - {{ review.name }}{% endblock %}
+
+{% block meta %}
+  <meta name="description" content="{{ review.descriptionOfDish }}"/>
+
+  <meta property="fb:app_id" content="371959079641288"/>
+  <meta property="og:description" content="{{ review.reviewHighlight }}"/>
+  <meta property="og:image" content="{{ review.heroImage.s3Key | image }}"/>
+  <meta property="og:image:height" content="1152"/>
+  <meta property="og:image:width" content="2048"/>
+  <meta property="og:site_name" content="Mozzstix">
+  <meta property="og:title" content="{{ review.nameOfDish }} from {{ review.name }}"/>
+  <meta property="og:url" content="{{ global.site.baseUrl }}{{ currentPath }}"/>
+  <meta property="og:type" content="review"/>
+{% endblock %}
+
+{% block scripts %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Restaurant",
+      "name": "{{ review.name }}",
+      "image": "{{ review.heroImage.s3Key | image }}",
+      "sameAs": "{{ review.website }}",
+      "priceRange": "{{  review.priceRange }}",
+      "servesCuisine": "{{ review.cuisine }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ review.address }}",
+        "addressLocality": "{{ review.city }}",
+        "addressRegion": "{{ review.state }}",
+        "postalCode": "{{ review.zipCode }}",
+        "addressCountry": "US"
+      },
+      "telephone": "{{ review.telephone }}",
+      "aggregateRating": {
+        "@type": "aggregateRating",
+        "ratingValue": {{ review.rating | replace("-", ".") }},
+        "ratingCount": 1
+      },
+      "review": {
+        "@context": "http://schema.org",
+        "@type": "Review",
+        "url": "{{ global.site.baseUrl }}{{ currentPath }}",
+        "author": {
+          "@type": "Organization",
+          "name": "Mozzstix",
+          "sameAs": "{{ global.site.baseUrl }}"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Mozzstix",
+          "sameAs": "{{ global.site.baseUrl }}"
+        },
+        "datePublished": "{{ review._enabledAt }}",
+        "reviewBody": "{{ review.reviewHighlight }}",
+        "description": "{{ review.reviewHighlight }}",
+        "inLanguage": "en",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": {{ review.rating | replace("-", ".") }}
+        }
+      }
+    }
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="review-container {{ review.theme }}">
+    <div class="hero-image-container">
+      <div class="hero-image" style="background-image: url('{{ review.heroImage.s3Key | image }}');"></div>
+    </div>
+    <div class="review">
+      <div class="review-header">
+        <div class="name-of-dish">{{ review.nameOfDish }}</div>
+        <div class="name">{{ recipe.name }}</div>
+        <div class="address">{{ review.address }}<br>{{ review.city }}, {{ review.state }}, {{ review.zipCode }}</div>
+        <div class="rating-wrapper">
+          <div class="rating-{{ review.rating }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        </div>
+      </div>
+      <div class="review-content">{{ review.reviewHtml | safe }}</div>
+      <table>
+        <tr>
+          <td class="key">Price</td>
+          <td class="value">{{ review.priceDescription }}</td>
+        </tr>
+        <tr>
+          <td class="key">Crispiness</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.crispiness }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Breading</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.breading }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Cheese</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.cheese }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Gooeyness</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.stretch }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Dip</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.dip }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="key">Presentation</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.presentation }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+        <tr class="overall-rating">
+          <td class="key">Overall</td>
+          <td class="value">
+            <div class="rating-wrapper">
+              <div class="rating-{{ review.rating }}">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="review-footer">
+        {% if previousPath %}
+          <a href="{{ previousPath }}"><strong class="previous-link">Previous Review</strong></a>
+        {% endif %}
+        {% if nextPath %}
+          <a href="{{ nextPath }}"><strong class="next-link">Next Review</strong></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="social-container">
+    <div class="share-label">Share this</div>
+    <button class="facebook-share" onclick="facebookShare();">
+      <img class="facebook-share-logo" src="/assets/images/icon-facebook-share.svg">
+    </button>
+    {#<button class="email-share" onclick="facebookShare();">#}
+    {#<img class="email-share-logo" src="/assets/images/icon-email-share.svg">#}
+    {#</button>#}
+  </div>
+
+  <script>
+    function facebookShare() {
+      FB.ui({
+        method: 'share',
+        href: '{{ global.site.baseUrl }}{{ currentPath }}',
+      }, function (response) {
+      });
+    }
+  </script>
+{% endblock %}
+

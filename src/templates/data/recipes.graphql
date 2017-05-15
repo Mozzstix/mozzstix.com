@@ -1,0 +1,17 @@
+{
+  recipes: getRecipeList {
+    _id
+    _enabledAt
+    _enabled
+    _createdAt
+    _updatedAt
+    name
+    theme
+    promoImage {
+      s3Key
+    }
+    heroImage {
+      s3Key
+    }
+  }
+}
