@@ -89,6 +89,6 @@
     "instafeed.js": "^1.4.1",
     "raf-ready": "^1.0.1",
     "svg4everybody": "^2.1.0",
-    "takeshape-cli": "^1.7.1"
+    "takeshape-cli": "^2.0.3"
   }
 }
