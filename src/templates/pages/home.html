@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "base.html" %}
 {% block nav %}{% endblock %}
 {% block content %}
     <div id="home" class="home">
@@ -62,8 +62,8 @@
             </div>
         </div>
         <!-- promos -->
-        {%  for promo in reviews %}
-            {% include "../partials/home-review.html" %}
+        {%  for promo in reviews.items %}
+            {% include "partials/home-review.html" %}
         {% endfor %}
     </div>
 {% endblock %}

@@ -7,7 +7,7 @@
 
   <meta property="fb:app_id" content="371959079641288"/>
   <meta property="og:description" content="{{ review.reviewHighlight }}"/>
-  <meta property="og:image" content="{{ review.heroImage.s3Key | image }}"/>
+  <meta property="og:image" content="{{ review.heroImage.path | image }}"/>
   <meta property="og:image:height" content="1152"/>
   <meta property="og:image:width" content="2048"/>
   <meta property="og:site_name" content="Mozzstix">
@@ -22,7 +22,7 @@
       "@context": "http://schema.org",
       "@type": "Restaurant",
       "name": "{{ review.name }}",
-      "image": "{{ review.heroImage.s3Key | image }}",
+      "image": "{{ review.heroImage.path | image }}",
       "sameAs": "{{ review.website }}",
       "priceRange": "{{  review.priceRange }}",
       "servesCuisine": "{{ review.cuisine }}",
@@ -70,7 +70,7 @@
 {% block content %}
   <div class="review-container {{ review.theme }}">
     <div class="hero-image-container">
-      <div class="hero-image" style="background-image: url('{{ review.heroImage.s3Key | image }}');"></div>
+      <div class="hero-image" style="background-image: url('{{ review.heroImage.path | image }}');"></div>
     </div>
     <div class="review">
       <div class="review-header">

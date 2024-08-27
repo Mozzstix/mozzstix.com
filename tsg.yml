@@ -20,16 +20,14 @@ routes:
   review:
     path: /review/:name
     template: pages/review.html
-    context: data/reviews.graphql
     paginate:
-      property: reviews
+      data: data/reviews.graphql
       itemName: review
 
   recipe:
     path: /recipe/:name
     template: pages/recipe.html
-    context: data/recipes.graphql
     paginate:
-      property: recipes
+      data: data/recipes.graphql
       itemName: recipe
 

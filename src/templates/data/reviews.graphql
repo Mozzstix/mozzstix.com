@@ -1,41 +1,43 @@
 {
   reviews: getReviewList {
-    _id
-    _enabledAt
-    _enabled
-    _createdAt
-    _updatedAt
-    neighborhood
-    nameOfDish
-    promoCta
-    name
-    zipCode
-    theme
-    price
-    address
-    state
-    rating
-    city
-    breading
-    dip
-    stretch
-    cheese
-    crispiness
-    presentation
-    priceDescription
-    promoImage {
-      s3Key
+    items {
+      _id
+      _enabledAt
+      _enabled
+      _createdAt
+      _updatedAt
+      neighborhood
+      nameOfDish
+      promoCta
+      name
+      zipCode
+      theme
+      price
+      address
+      state
+      rating
+      city
+      breading
+      dip
+      stretch
+      cheese
+      crispiness
+      presentation
+      priceDescription
+      promoImage {
+        path
+      }
+      heroImage {
+        path
+      }
+      reviewHighlight
+      telephone
+      cuisine
+      priceRange
+      website
+      reviewHtml
+      pricePerStick
+      searchSummary
     }
-    heroImage {
-      s3Key
-    }
-    reviewHighlight
-    telephone
-    cuisine
-    priceRange
-    website
-    reviewHtml
-    pricePerStick
-    searchSummary
   }
 }

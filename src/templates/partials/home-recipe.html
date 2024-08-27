@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="promo-image-container" style="background-image: url('{{ promo.promoImage.s3Key | image }}');">
+    <div class="promo-image-container" style="background-image: url('{{ promo.promoImage.path | image }}');">
       <div class="image-gradient"></div>
       <div class="button-container">
         <a href="{{ promo | route('review') }}">
